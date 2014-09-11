@@ -9,25 +9,38 @@
  * Main module of the application.
  */
 angular
-  .module('fmuClientApp', [
+.module('fmuClientApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
-    'ngRoute',
     'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+    'ngTouch',
+    'ui.router'
+])
+.config(function($stateProvider, $urlRouterProvider) {
+    //
+    // For any unmatched url, redirect to /state1
+    $urlRouterProvider.otherwise("/overview/orders");
+    //
+    // Now set up the states
+    $stateProvider
+    .state('overview', {
+        url: "/overview",
+        abstract: true,
+        controller: 'OverviewCtrl',
+        templateUrl: "views/overview.html",
+    })
+    .state('overview.orders', {
+        url: "/orders",
+        templateUrl: "views/overview.orders.html",
+    })
+    .state('overview.ongoing', {
+        url: "/ongoing",
+        templateUrl: "views/overview.ongoing.html",
+    })
+    .state('overview.completed', {
+        url: "/completed",
+        templateUrl: "views/overview.completed.html",
+    });
+});
+
