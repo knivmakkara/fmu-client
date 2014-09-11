@@ -1,0 +1,11 @@
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-collapse collapse">
+            <ul ng-repeat="link in links" class="nav navbar-nav">
+                <li>{{isActive(link)}}<a ng-click="clickLink(link)">{{link.name}}</a></li>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ui-view></div>
