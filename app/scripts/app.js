@@ -20,52 +20,52 @@ angular
 .config(function($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /state1
-    $urlRouterProvider.otherwise("/overview/orders");
+    $urlRouterProvider.otherwise('/overview/orders');
     //
     // Now set up the states
     $stateProvider
     .state('overview', {
-        url: "/overview",
+        url: '/overview',
         abstract: true,
         controller: 'OverviewCtrl',
-        templateUrl: "views/overview/overview.html",
+        templateUrl: 'views/overview/overview.html',
     })
     .state('overview.orders', {
-        url: "/orders",
-        templateUrl: "views/overview/orders.html",
+        url: '/orders',
+        templateUrl: 'views/overview/orders.html',
     })
     .state('overview.ongoing', {
-        url: "/ongoing",
-        templateUrl: "views/overview/ongoing.html",
+        url: '/ongoing',
+        templateUrl: 'views/overview/ongoing.html',
     })
     .state('overview.completed', {
-        url: "/completed",
-        templateUrl: "views/overview/completed.html",
+        url: '/completed',
+        templateUrl: 'views/overview/completed.html',
     })
     .state('eavrop', {
-        url: "/eavrop/{eavropId:[0-9]+}",
+        url: '/eavrop/{eavropId:[0-9]+}',
         abstract: true,
-        templateUrl: "views/eavrop/eavrop.html",
+        templateUrl: 'views/eavrop/eavrop.html',
     })
     .state('eavrop.order', {
-        url: "/order",
-        templateUrl: "views/eavrop/order.html",
+        url: '/order',
+        templateUrl: 'views/eavrop/order.html',
     })
     .state('eavrop.allevents', {
-        url: "/all-events",
-        templateUrl: "views/eavrop/all-events.html",
+        url: '/all-events',
+        templateUrl: 'views/eavrop/all-events.html',
     })
     .state('eavrop.compensation', {
-        url: "/compensation",
-        templateUrl: "views/eavrop/compensation.html",
+        url: '/compensation',
+        templateUrl: 'views/eavrop/compensation.html',
     })
     .state('eavrop.investigation', {
-        url: "/investigation",
-        templateUrl: "views/eavrop/investigation.html",
+        url: '/investigation',
+        templateUrl: 'views/eavrop/investigation.html',
     })
     .state('eavrop.notes', {
-        url: "/notes",
-        templateUrl: "views/eavrop/notes.html",
-    })
+        url: '/notes',
+        templateUrl: 'views/eavrop/notes.html',
+    });
 });
 

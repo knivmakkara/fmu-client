@@ -14,5 +14,5 @@ angular.module('fmuClientApp').
     $scope.clickLink = function(link){
         var url = '^.'+link.state;
         $state.go(url);
-    }
+    };
 }]);

@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('fmuClientAppDev', ['fmuClientApp', 'ngMockE2E']);
 
 angular.module('fmuClientAppDev').run(function($httpBackend){
